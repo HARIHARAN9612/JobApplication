@@ -1,0 +1,98 @@
+body{
+   background-color: rgb(255, 255, 255);
+   padding: 0%;
+   margin: 0%;
+   display: inline-block;
+}
+.desktopnav{
+       align-items: center;
+       gap:1rem;
+       height:70px;
+       padding-right: 40px;
+       display:flex;
+       flex-direction: row;
+       margin-bottom: -10px;
+}
+.logo{
+    padding-left: 40px;
+    font-size: 35px;
+    font-weight: 800;
+    color: rgb(22, 103, 156);
+}
+.logo1{
+color: rgb(16, 101, 157);
+ font-Weight: 'bold';
+}
+.nav-links{
+    padding-left: 120px;
+    gap: 3rem;
+    list-style: none;
+    display: flex;  
+    justify-content:center;
+    align-items: center;
+    margin-right: 150px;
+    flex-direction: row;
+    list-style: none;
+}
+.nav-links li{
+    font-size: 20px;
+    color: rgb(52, 49, 49);
+    text-decoration: none;
+    text-decoration-color: rgb(7, 7, 7);
+    text-underline-offset:none; 
+    cursor:pointer;
+    font-weight: 600;
+}
+
+button
+{
+   width: 120px;
+   height: 43px;
+   border-radius: 25px;
+   border: none;
+   outline: none;
+   color:white;
+   background-color: rgb(65, 128, 169);
+   font-size: 17px;
+   font-weight: 700;
+   cursor: pointer;
+}
+.hire{
+    width: 140px;
+    height: 43px;
+    border-radius: 25px;
+    border: 0.5px solid rgb(255, 255, 255);
+    outline: none;
+    color:rgb(11, 11, 11);
+    background-color: white;
+    border:1px solid rgb(19, 18, 18);
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.Home{
+    display: flex;
+    flex-direction: row;
+}
+.pic{
+    padding-top: 130px;
+    padding-left: 105px;
+    padding-right: 10px;
+ width:900px
+}
+.Hometext {
+    margin-top: 110px;
+    padding-left: 40px;
+}
+.Hometext h1{
+    font-size: 60px;
+}
+.Hometext p{
+    font-size: 25px;
+    font-weight: 80px;
+}
+.Home button  {
+    margin-left: 40px;
+  
+}
