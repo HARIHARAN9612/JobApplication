@@ -5,12 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Land from './Fresh/Landing';
 import Signup from './Fresh/SignUp';
+import LoginForm from './Fresh/Login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Land />
+    <Land/>
   </React.StrictMode>
 );
 

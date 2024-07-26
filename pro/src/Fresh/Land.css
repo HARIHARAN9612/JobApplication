@@ -1,27 +1,38 @@
-body{
+body {
    background-color: rgb(255, 255, 255);
    padding: 0%;
    margin: 0%;
+   
    display: inline-block;
+   cursor:default;
 }
 .desktopnav{
+       background-color: white;
+       box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.07);
        align-items: center;
+       position: fixed;
        gap:1rem;
        height:70px;
-       padding-right: 40px;
+       padding-right: 60px;
        display:flex;
        flex-direction: row;
-       margin-bottom: -10px;
+       padding-top: -10px;
+       z-index: 2;
+       
+}
+.desktopnav .scrolled{
+    box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.2);
 }
 .logo{
-    padding-left: 40px;
+    padding-left: 60px;
     font-size: 35px;
     font-weight: 800;
-    color: rgb(22, 103, 156);
+    color: rgb(44, 114, 211);
 }
 .logo1{
-color: rgb(16, 101, 157);
+color: rgb(44, 114, 211);
  font-Weight: 'bold';
+ 
 }
 .nav-links{
     padding-left: 120px;
@@ -44,15 +55,15 @@ color: rgb(16, 101, 157);
     font-weight: 600;
 }
 
-button
+.navbt 
 {
    width: 120px;
    height: 43px;
-   border-radius: 25px;
+   border-radius: 10px;
    border: none;
    outline: none;
    color:white;
-   background-color: rgb(65, 128, 169);
+   background-color: rgb(44, 114, 211);
    font-size: 17px;
    font-weight: 700;
    cursor: pointer;
@@ -60,12 +71,28 @@ button
 .hire{
     width: 140px;
     height: 43px;
-    border-radius: 25px;
+    border-radius: 10px;
     border: 0.5px solid rgb(255, 255, 255);
     outline: none;
     color:rgb(11, 11, 11);
     background-color: white;
-    border:1px solid rgb(19, 18, 18);
+    border:1px solid rgb(128, 128, 128);
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.hire:hover{
+    box-shadow: 1px 1px 12px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+button{
+    width: 120px;
+    height: 43px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color:white;
+    background-color: rgb(44, 114, 211);
     font-size: 17px;
     font-weight: 700;
     cursor: pointer;
@@ -75,15 +102,18 @@ button
     display: flex;
     flex-direction: row;
 }
+
 .pic{
-    padding-top: 130px;
+    padding-top: 50px;
     padding-left: 105px;
-    padding-right: 10px;
- width:900px
+    padding-right: 30px;
+    border-radius:70px;
+     width:900px
 }
 .Hometext {
     margin-top: 110px;
-    padding-left: 40px;
+    padding-left: 60px;
+    padding-bottom: 60px;
 }
 .Hometext h1{
     font-size: 60px;
@@ -95,4 +125,119 @@ button
 .Home button  {
     margin-left: 40px;
   
+}
+/*Steps*/
+.steps{
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top:40px;
+    padding-bottom:40px;
+    gap:5rem;
+    justify-content:space-between;
+    background-color: rgb(44, 114, 211);
+    
+}
+.steps div{
+    padding: 30px;
+    gap:2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+}
+
+.steps div:hover{
+    padding: 30px;
+    box-shadow: 10px 10px 40px;
+    gap:2rem;
+    align-items: center;
+    border: none;
+    display: flex;
+    cursor:pointer;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.steps div p{
+ font-size: 25px;
+ font-weight: 600; 
+}
+.jobcat{
+   display: flex;
+   padding-top: 70px;
+   background-color:white;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+.jobcat1{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-bottom:40px;
+   
+}
+.joblogo{
+    font-size: 50px;
+    color: rgb(44, 114, 211);
+}
+.jobc{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border:1px solid rgb(255, 255, 255);
+    padding:60px;
+    border-radius: 8px;
+   box-shadow: 1px 10px 15px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 90px;
+}
+.jobc1 {
+    background-color: white;
+     display: flex;
+     flex-direction: row;
+     gap :2rem;
+     padding-bottom: 30px;
+}
+.jobc2{
+    display: flex;
+    gap :2rem;
+    flex-direction: row;
+}
+.jobc1 div , .jobc2 div{
+    border: 0.01rem solid rgb(201, 201, 201);
+    padding: 20px;
+    height: 150px;
+    border-radius: 10px;
+    background-color: white;
+    width:200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+.jobc1 div h2 , .jobc2 div h2{
+    color:black ;
+    font-weight: 400;
+    font-size: 24px;
+   
+}
+.jobc1 div:hover, .jobc2 div:hover{
+    border :none;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;  
+}
+.jobc1 div h2, .jobc2 div h2{
+   color: black;
+   font-size: 18px;
+   
+}
+.jobsicon{
+    background-color: rgb(44, 114, 211);
+    padding: 10px;
+    border-radius: 20px;
 }
