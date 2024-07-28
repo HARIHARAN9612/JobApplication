@@ -17,11 +17,11 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
 }
-.Loginbox1{
+.Loginbox{
     border-radius: 6px;
     height: 100%;
     padding-left: 60px;
-    padding-top: 100px;
+    padding-top: 10px;
     background-color: #fff;
     width: 430px; 
 }
@@ -91,12 +91,19 @@ body {
     gap: 0.5rem;
     flex-direction: column;
     width: 86%;
-    padding-bottom: 18px;
+    
+}
+.inputbox3{
+    padding-top: -12px;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    width: 86%;
+    padding-bottom: 10px;
 }
 input{
     padding: 12px;
     border: none;
-    
     font-size: 15px;
     border:0.5px solid rgb(215, 211, 211);
     border-radius: 5px;
@@ -104,22 +111,16 @@ input{
 label{
     font-weight: 600;
 }
-.forget1{
+.forget{
     display: flex;
     justify-content: space-between;
-    padding-right: 200px;
+    padding-right: 65px;
     padding-bottom: 25px;
 }
-.forget1 a{
+.forget a{
     text-decoration: none;
-    font-size: 15px;
-    color: rgb(90, 156, 218);
-}
-.forget1 a:hover{
-    text-decoration: none;
-    font-size: 15px;
-    color: rgb(7, 112, 211);
-    text-decoration: underline;
+    font-size: 17px;
+    color: rgb(76, 136, 214);
 }
 .signup {
     display: flex;

@@ -1,38 +1,41 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaFacebook, FaGoogle } from "react-icons/fa";
-import "./Login.css";
+import "./Signup.css";
 
-const Login = ({ toggleForm }) => {
+const Signup = ({ toggleForm }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [cpassword, setCpassword] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Retrieve stored user data
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-
-    if (storedUser) {
-      if (email === storedUser.email && password === storedUser.password) {
-        alert("Login successful");
-        // Proceed to the next part of your app
-      } else {
-        alert("Invalid credentials");
-      }
-    } else {
-      alert("No user found. Please sign up.");
+    if (password !== cpassword) {
+      alert("Passwords do not match");
+      return;
     }
+    // Store user data in local storage
+    const userData = {
+      email,
+      password,
+    };
+    localStorage.setItem("user", JSON.stringify(userData));
+    setEmail("");
+    setPassword("");
+    setCpassword("");
+    alert("Registration successful");
+    toggleForm("login"); // Switch to login form
   };
 
   return (
     <div className="outer">
-      <div className="Loginbox1">
+      <div className="Loginbox">
         <button className="close-button" onClick={() => toggleForm(null)}>
           &#10006;
         </button>
         <div className="loginh1">
-          <h1>Login</h1>
+          <h1>Signup From here</h1>
           <p>
-            Enter your credentials to login
+            Create your Account to continue <br /> and explore new jobs
           </p>
         </div>
         <div className="line"></div>
@@ -66,15 +69,27 @@ const Login = ({ toggleForm }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="forget1">
-        <span>Don't have an account?</span>
-          <a href="#" onClick={() => toggleForm("signup")}>
-            Sign Up
-          </a>
+        <div className="inputbox3">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            placeholder="Confirm the password"
+            required
+            value={cpassword}
+            onChange={(e) => setCpassword(e.target.value)}
+          />
+        </div>
+        <div className="forget">
+          <label >
+            Already have an account?{" "}
+            <a href="#" onClick={() => toggleForm("login")}>
+              Login
+            </a>
+          </label>
         </div>
         <div className="submitb">
           <button className="submit" type="submit" onClick={handleSubmit}>
-            Login
+            Sign Up
           </button>
         </div>
       </div>
@@ -82,4 +97,4 @@ const Login = ({ toggleForm }) => {
   );
 };
 
-export default Login;
+export default Signup;
