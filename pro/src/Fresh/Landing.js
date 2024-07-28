@@ -13,6 +13,8 @@ import j5 from "./Assests/Icons/j5.svg";
 import j6 from "./Assests/Icons/j6.svg";
 import j7 from "./Assests/Icons/j7.svg";
 import j8 from "./Assests/Icons/j8.svg";
+import man from "./Assests/leftman.png";
+
 import {
   FaLinkedin,
   FaFacebook,
@@ -20,7 +22,10 @@ import {
   FaPinterest,
   FaHome,
   FaGoogle,
-  FaPhone,
+  FaBoxes,FaStock,
+  FaPhone,FaSearch,
+  FaHSquare,
+  FaIndustry
 } from "react-icons/fa";
 
 function Land({ toggleForm }) {
@@ -66,8 +71,12 @@ function Land({ toggleForm }) {
               <br /> Connect with leading employers and <br /> take the next
               step in your career today.
             </p>
-            <button className="apply1" onClick={() => toggleForm("login")}>Apply</button>
-            <button className="hire1" onClick={() => toggleForm("login")}>Hire a Talent</button>
+            <button className="apply1" onClick={() => toggleForm("login")}>
+              Apply
+            </button>
+            <button className="hire1" onClick={() => toggleForm("login")}>
+              Hire a Talent
+            </button>
           </div>
           <div className="pict">
             <img className="pic" src={image} alt="JobHive" />
@@ -165,6 +174,58 @@ function Land({ toggleForm }) {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="Abouttop">
+        <h1>About Us</h1>
+        <div className="line"></div>
+        <p>
+          Digital platform that connects employers with job seekers, <br />{" "}
+          providing a space for posting job listings and applying for positions,
+          To get a Dream job
+        </p>
+      </div>
+      <div className="About">
+      <div className="Aimage">
+      <img className="AMan" src={man} alt="Land" />
+      </div>
+      <div className="Aright">
+      <h1>
+        Helps You to Get the <br/> Best Job That fits You
+      </h1>
+      <p>
+          Digital platform that connects employers with job seekers, <br />{" "}
+          providing a space for posting job listings and applying for positions,
+          To get a Dream job
+        </p>
+        <div className="ico">
+        <FaBoxes
+                      id="ic"
+                      style={{color:'white', width: "40px", height: "40px", margin: "18px",backgroundColor:'blue',padding:'10px',borderRadius:'10px'}}
+                    />  <p> <span style={{fontSize:'24px',fontWeight:'600'}}>#1 Job site in Country </span><br/>
+          Digital platform that connects employers with job seekers, <br />{" "}
+          providing a space for posting job listings  To get a Dream job
+        </p>
+        </div>
+        <div className="ico">
+        <FaSearch
+                      id="ic"
+                      style={{color:'white', width: "40px", height: "40px", margin: "18px",backgroundColor:'blue',padding:'10px',borderRadius:'10px'}}
+                    />  <p> <span style={{fontSize:'24px',fontWeight:'600'}}>Seamless Search </span><br/>
+          Digital platform that connects employers with job seekers, <br />{" "}
+          providing a space for posting job listings  To get a Dream job
+        </p>
+        </div>
+        <div className="ico">
+        <FaIndustry                      id="ic"
+                      style={{color:'white', width: "40px", height: "40px", margin: "18px",backgroundColor:'blue',padding:'10px',borderRadius:'10px'}}
+                    />  <p> <span style={{fontSize:'24px',fontWeight:'600'}}>Hired in Top Companies </span><br/>
+          Digital platform that connects employers with job seekers, <br />{" "}
+          providing a space for posting job listings  To get a Dream job
+        </p>
+        </div>
+      </div>
+   
       </div>
 
       <div className="Contacth">
@@ -291,6 +352,7 @@ function Land({ toggleForm }) {
           </div>
         </div>
       </div>
+
       <div className="Footer">
         <div className="foot1">
           <h1 className="logo">JobHive</h1>
@@ -398,24 +460,20 @@ function Land({ toggleForm }) {
           </div>
         </div>
         <div className="foot4">
-         <div>
-          <p className="p1">Join our Newsletter</p>
-          <p>Subscribe to get the latest jobs posted,<br/> candidates...</p>
-          <input
-                className="l1"
-                placeholder="Your Email"
-                type="text"
-              ></input>   
-         </div>
-         <div>
-         <button>Subscribe Now!</button>
-         </div>
+          <div>
+            <p className="p1">Join our Newsletter</p>
+            <p>
+              Subscribe to get the latest jobs posted,
+              <br /> candidates...
+            </p>
+            <input className="l1" placeholder="Your Email" type="text"></input>
+          </div>
+          <div>
+            <button>Subscribe Now!</button>
+          </div>
         </div>
-       
       </div>
-      <div className="footerbottom">
-
-</div>
+      <div className="footerbottom"></div>
     </>
   );
 }

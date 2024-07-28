@@ -165,7 +165,7 @@ button{
 }
 .Hometext p{
     margin-top: -20px;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 80px;
 }
 .Home button  {
@@ -314,11 +314,59 @@ button{
     border-radius: 20px;
 }
 
+/*About*/
+.Abouttop
+{
+    background-color: rgb(44, 114, 211);
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 50px;
+    margin-bottom: 100px;
+}
+.Abouttop h1{
+    color: white;
+}
+.Abouttop .line{
+        height: 1px;
+       background-color: white;
+}
+.Abouttop p{
+    color: white;
+    font-size: 16px;
+}
+.About{
+    width:100%;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    
+}
+.Aimage{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+}
+.Aright{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    padding-left: 60px;
+    padding-top: 40px;
+    margin-left: 40px;
+}
+.Aright div{
+    display: flex;
+}
+.Aright .ico{
+    margin-top: 30px;
+}
+.ico p{
+    padding-left: 5px;
+}
 /*Contact*/
 .Contacth
 {
     background-color: rgb(44, 114, 211);
     padding: 20px;
+    margin-top: px;
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 50px;
