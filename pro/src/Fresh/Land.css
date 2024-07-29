@@ -295,16 +295,16 @@ button{
    
 }
 .jobc1 div:hover, .jobc2 div:hover{
-    border :none;
+   
     box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;  
+    border:none;
     transition: transform 7s ease; 
    
 }
 .jobc1 div h2, .jobc2 div h2{
    color: black;
    font-size: 18px;
-   
 }
 .nav-links .link:hover {
     transform: scale(1.05); /* Slightly increase size on hover */
@@ -598,3 +598,37 @@ li {
     width: 100%;
     background-color: rgb(44, 114, 211);
 }
+.altnav{
+    display: flex;
+    height: 80px;
+   z-index: 2;
+   align-items: center;
+   gap:3rem;
+   height:70px;
+   padding-right: 60px;
+   display:flex;
+   position: fixed;
+   flex-direction: row;
+}
+
+.alt-links{
+    list-style: none;
+    display: flex;  
+    justify-content:center;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 88.5px;
+}
+.altnav button:hover{
+    background-color: rgb(30, 110, 195);
+   
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    color: rgb(191, 10, 12);
+  }
+  
+  .user-info span {
+    margin-left: 8px;
+  }

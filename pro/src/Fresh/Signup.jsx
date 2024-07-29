@@ -4,6 +4,7 @@ import "./Signup.css";
 import axios from 'axios';
 
 const Signup = ({ toggleForm }) => {
+  const [username, setUsername] = useState(""); // State for username
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
@@ -16,7 +17,7 @@ const Signup = ({ toggleForm }) => {
       return;
     }
 
-    const userData = { email, password };
+    const userData = { username, email, password }; // Include username in userData
 
     try {
       const url = role === "Recruiter" ? 'http://localhost:8080/recruiters' : 'http://localhost:8080/candidates';
@@ -28,6 +29,7 @@ const Signup = ({ toggleForm }) => {
       alert("Registration failed. Please try again.");
     }
 
+    setUsername("");
     setEmail("");
     setPassword("");
     setCpassword("");
@@ -50,6 +52,7 @@ const Signup = ({ toggleForm }) => {
         </div>
         <div className="logsign">
           <p>Signup as </p>
+       
           <select 
             className="role-dropdown"
             value={role}
@@ -66,11 +69,19 @@ const Signup = ({ toggleForm }) => {
         <button className="social-button gl">
           <FaGoogle className="icon" /> <span>Log in With Google</span>
         </button>
-        <button className="social-button fb">
-          <FaFacebook className="icon" /> <span>Log in With Facebook</span>
-        </button>
-        <div className="line"></div>
+       
         <div className="inputbox1">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
+        <div className="inputbox2">
           <label>Email</label>
           <input
             type="email"
@@ -81,7 +92,7 @@ const Signup = ({ toggleForm }) => {
             onKeyPress={handleKeyPress}
           />
         </div>
-        <div className="inputbox2">
+        <div className="inputbox3">
           <label>Password</label>
           <input
             type="password"
@@ -92,7 +103,7 @@ const Signup = ({ toggleForm }) => {
             onKeyPress={handleKeyPress}
           />
         </div>
-        <div className="inputbox3">
+        <div className="inputbox4">
           <label>Confirm Password</label>
           <input
             type="password"
