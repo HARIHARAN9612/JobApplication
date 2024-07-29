@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaFacebook, FaGoogle } from "react-icons/fa";
 import "./Login.css";
+import axios from 'axios';
 
 const Login = ({ toggleForm }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("Candidate"); // State to track role
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Retrieve stored user data
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    try {
+      const url = role === "Recruiter" ? 'http://localhost:8080/recruiters' : 'http://localhost:8080/candidates';
+      const response = await axios.get(url);
+      const users = response.data;
 
-    if (storedUser) {
-      if (email === storedUser.email && password === storedUser.password) {
+      const user = users.find(user => user.email === email && user.password === password);
+      if (user) {
         alert("Login successful");
         // Proceed to the next part of your app
       } else {
         alert("Invalid credentials");
       }
-    } else {
-      alert("No user found. Please sign up.");
+    } catch (error) {
+      console.error("There was an error!", error);
+      alert("Error during login. Please try again.");
+    }
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleSubmit(event);
     }
   };
 
@@ -30,12 +41,21 @@ const Login = ({ toggleForm }) => {
           &#10006;
         </button>
         <div className="loginh1">
-          <h1>Login</h1>
-          <p>
-            Enter your credentials to login
-          </p>
+          <h1>Login Here</h1>
+        </div>
+        <div className="logsign">
+          <p>Login as </p>
+          <select 
+            className="role-dropdown"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="Candidate">Candidate</option>
+            <option value="Recruiter">Recruiter</option>
+          </select>
         </div>
         <div className="line"></div>
+       
         <button className="social-button lkd">
           <FaLinkedin className="icon" /> <span>Log in With LinkedIn</span>
         </button>
@@ -54,6 +74,7 @@ const Login = ({ toggleForm }) => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
         </div>
         <div className="inputbox2">
@@ -64,10 +85,11 @@ const Login = ({ toggleForm }) => {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            onKeyPress={handleKeyPress}
           />
         </div>
         <div className="forget1">
-        <span>Don't have an account?</span>
+          <span>Don't have an account?</span>
           <a href="#" onClick={() => toggleForm("signup")}>
             Sign Up
           </a>

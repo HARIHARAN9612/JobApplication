@@ -174,4 +174,31 @@ label{
     font-size: 14px;
     margin-top: 10px;
   }
+  .logsign{
+    display: flex;
+  }
+  /* Add styles for the toggle button */
+/* Style for the dropdown */
+.role-dropdown {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 150px; /* Adjust width as needed */
+  }
   
+  .role-dropdown:focus {
+    outline: none;
+    background-color: #ffffff;
+  }
+  
+  .logsign p{
+    font-size: 18px;
+    padding-right: 10px;
+    font-weight: 600;
+  }

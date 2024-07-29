@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Land from './Fresh/Landing';
 import LoginForm from './Fresh/Login';
 import Sign from './Fresh/Signup';
+import About from './Fresh/About';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

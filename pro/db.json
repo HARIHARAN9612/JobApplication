@@ -1,0 +1,21 @@
+{
+  "recruiters": [
+    {
+      "id": "6c3b",
+      "email": "23cse505@skcet.ac.in",
+      "password": "a"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "ff72",
+      "email": "Hariharan9612@gmail.com",
+      "password": "a"
+    },
+    {
+      "id": "2049",
+      "email": "Hariharan9612@gmail.com",
+      "password": "hj"
+    }
+  ]
+}

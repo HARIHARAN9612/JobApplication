@@ -146,6 +146,7 @@ button{
 .Home{
     display: flex;
     flex-direction: row;
+   
 }
 
 .pic{
@@ -153,7 +154,7 @@ button{
     padding-left: 105px;
     padding-right: 30px;
     border-radius:70px;
-     width:900px
+     width:900px;
 }
 .Hometext {
     margin-top: 100px;
