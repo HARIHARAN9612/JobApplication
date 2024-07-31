@@ -1,0 +1,79 @@
+.job-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.job-card {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+}
+
+.company-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+.right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apply-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.apply-button:hover {
+  background-color: #0056b3;
+}
+
+.bottom {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #555;
+}
+
+.bottom p {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.icon-location::before {
+  content: url('../locationicon.png');
+  margin-right: 8px;
+}
+
+.icon-salary::before {
+  content: url('../salaryicon.png');
+  margin-right: 8px;
+}

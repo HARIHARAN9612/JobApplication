@@ -1,0 +1,97 @@
+.jobCard {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  width: 40px;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+}
+.jobCard p{
+  margin-left: 20px;
+  margin-top: 0px;
+  text-align: left;
+  padding-top: 30px;
+  
+}
+.jobCard:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.jobHeader {
+  display: flex;
+  align-items: center;
+}
+.submit1 .applyButton1{
+  width: 70px;
+  height: 30px;
+  border: 1px solid black;
+  background-color: #007bff;
+  padding: 10px;
+}
+
+.companyLogo {
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+  margin-right: 20px; 
+}
+
+.jobHeader h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.headingdiv{
+  margin-left: 15px;
+}
+.applyButton,
+.fullTimeButton {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.applyButton:hover,
+.fullTimeButton:hover {
+  background-color: #0056b3;
+}
+
+.jobFooter {
+  display: flex;
+  gap: 10px;
+  /* margin-top: 10px; */
+}
+
+.company,
+.salary,
+.location {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  background-color:  #1570d1;
+  padding: 10px;
+  margin-bottom: 105px;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.salary i,
+.location i {
+  margin-right: 5px;
+}
