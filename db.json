@@ -4,6 +4,12 @@
       "id": "6c3b",
       "email": "23cse505@skcet.ac.in",
       "password": "a"
+    },
+    {
+      "id": "50cc",
+      "username": "kk",
+      "email": "Hariharan9612@gmail.com",
+      "password": "kk"
     }
   ],
   "candidates": [
@@ -16,12 +22,6 @@
       "id": "2049",
       "email": "Hariharan9612@gmail.com",
       "password": "hj"
-    },
-    {
-      "id": "a56c",
-      "username": "",
-      "email": "",
-      "password": ""
     },
     {
       "id": "adb6",
@@ -38,6 +38,18 @@
     {
       "id": "273d",
       "username": "hari",
+      "email": "Hariharan9612@gmail.com",
+      "password": "jj"
+    },
+    {
+      "id": "6ea4",
+      "username": "jj",
+      "email": "hariharand7373@gmail.com",
+      "password": "jj"
+    },
+    {
+      "id": "21c1",
+      "username": "jj",
       "email": "Hariharan9612@gmail.com",
       "password": "jj"
     }

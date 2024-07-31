@@ -21,12 +21,13 @@ body {
     border-radius: 6px;
     height: 100%;
     padding-left: 60px;
-    padding-top: 50px;
+    padding-top: 40px;
+    
     background-color: #fff;
     width: 430px; 
 }
-.loginh1{
-    gap: -2rem;
+.Loginbox1 .loginh1{
+    padding-top: 10px;
 }
 .social-button {
     display: flex;
@@ -39,7 +40,7 @@ body {
     position: relative;
     color: white;
     font-size: 16px;
-    gap: 4rem;
+    gap: 3rem;
     margin-bottom: 15px;
     
 }
@@ -53,9 +54,7 @@ body {
     background-color: rgb(232, 85, 53); /* Google color */
 }
 
-.fb {
-    background-color: #3b5998; /* Facebook color */
-}
+
 
 /* Position the icon on the left */
 .social-button .icon {
@@ -173,4 +172,26 @@ label{
     font-size: 14px;
     margin-top: 10px;
   }
+   .role-dropdown {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 8px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 14px;
+    margin-left: 10px;
+    font-size: 14px;
+    width: 150px; /* Adjust width as needed */
+  }
   
+  .role-dropdown:focus {
+    outline: none;
+    background-color: #ffffff;
+  }
+  
+  .logsign p{
+    font-size: 18px;
+    padding-right: 10px;
+    font-weight: 600;
+  }

@@ -1,48 +1,88 @@
-  import React from "react";
-  import { Link } from "react-router-dom";
-  import "./Land.css";
-  import image from "./Assests/home3.svg";
-  import boy from "./Assests/boy.png";
-  import usericon1 from "./Assests/Icons/user icon.svg";
-  import usericon2 from "./Assests/resumeicon.svg";
-  import usericon3 from "./Assests/Icons/job.svg";
-  import j1 from "./Assests/Icons/tech.svg";
-  import j2 from "./Assests/Icons/business.svg";
-  import j3 from "./Assests/Icons/j3.svg";
-  import j4 from "./Assests/Icons/j4.svg";
-  import j5 from "./Assests/Icons/j5.svg";
-  import j6 from "./Assests/Icons/j6.svg";
-  import j7 from "./Assests/Icons/j7.svg";
-  import j8 from "./Assests/Icons/j8.svg";
-  import man from "./Assests/leftman.png";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Land.css";
+import image from "./Assests/home3.svg";
+import boy from "./Assests/boy.png";
+import usericon1 from "./Assests/Icons/user icon.svg";
+import usericon2 from "./Assests/resumeicon.svg";
+import usericon3 from "./Assests/Icons/job.svg";
+import j1 from "./Assests/Icons/tech.svg";
+import j2 from "./Assests/Icons/business.svg";
+import j3 from "./Assests/Icons/j3.svg";
+import j4 from "./Assests/Icons/j4.svg";
+import j5 from "./Assests/Icons/j5.svg";
+import j6 from "./Assests/Icons/j6.svg";
+import j7 from "./Assests/Icons/j7.svg";
+import j8 from "./Assests/Icons/j8.svg";
+import man from "./Assests/leftman.png";
+import Login from "./Login";
+import Signup from "./Signup"; // Import Signup component
 
-  import {
-    FaLinkedin,
-    FaFacebook,
-    FaTwitter,
-    FaPinterest,
-    FaHome,
-    FaGoogle,
-    FaBoxes,FaStock,
-    FaPhone,FaSearch,
-    FaHSquare,
-    FaIndustry
-  } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaFacebook,
+  FaTwitter,
+  FaPinterest,
+  FaHome,
+  FaGoogle,
+  FaUser,
+  FaBoxes,
+  FaSearch,
+  FaHSquare,
+  FaPhone,
+  FaIndustry
+} from "react-icons/fa";
 
-  function Land({ toggleForm }) {
-    return (
-      <>
-        <div className="Landtop">
+const Land = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState(null); // 'candidate' or 'recruiter'
+  const [username, setUsername] = useState("");
+  const [formType, setFormType] = useState(null); // 'login' or 'signup'
+
+  const handleLoginSuccess = (user) => {
+    setIsLoggedIn(true);
+    setUserRole(user.role);
+    setUsername(user.username);
+    setFormType(null); // Close the form
+  };
+
+  const toggleForm = (type) => {
+    setFormType(type);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUserRole(null);
+    setUsername("");
+  };
+
+  const getNavClass = () => {
+    if (isLoggedIn) {
+      return userRole === 'candidate' ? 'desktopnav' : 'altnav';
+    }
+    return 'desktopnav';
+  };
+
+  return (
+    <>
+      <div className="Landtop">
+        {formType === 'login' && (
+          <Login toggleForm={toggleForm} onLoginSuccess={handleLoginSuccess} />
+        )}
+
+        {formType === 'signup' && (
+          <Signup toggleForm={toggleForm} />
+        )}
+
+        {getNavClass() === 'desktopnav' && (
           <div className="desktopnav">
             <h1 className="logo">JobHive</h1>
-
             <ul className="nav-links">
               <li className="link">
                 <Link to="/">Home</Link>
               </li>
-            
               <li className="link">
-                <Link to="/anotherpage">findjobs</Link>
+                <Link to="/anotherpage">Find Jobs</Link>
               </li>
               <li className="link">
                 <Link to="/About">About</Link>
@@ -51,39 +91,69 @@
                 <Link to="/contact">Contact</Link>
               </li>
             </ul>
-
-            <button  className="hire" onClick={() => toggleForm("login")}>
+            <button className="hire" onClick={() => toggleForm("login")}>
               Hire a Talent
             </button>
-            <button className="navbt1" onClick={() => toggleForm("login")}>
-              Login
+            {!isLoggedIn && (
+              <>
+                <button className="navbt1" onClick={() => toggleForm("login")}>
+                  Login
+                </button>
+                <button className="navbt" onClick={() => toggleForm("signup")}>
+                  Signup
+                </button>
+              </>
+            )}
+          </div>
+        )}
+
+        {getNavClass() === 'altnav' && (
+          <div className="altnav">
+            <h1 className="logo">JobHive</h1>
+            <ul className="alt-links">
+              <li className="link">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="link">
+                <Link to="/anotherpage">Find Jobs</Link>
+              </li>
+              <li className="link">
+                <Link to="/About">About</Link>
+              </li>
+              <li className="link">
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+            <div className="user-info">
+              <FaUser style={{ height: '20px', color: 'rgb(191, 10, 12)' }} />
+              <span>{username}</span>
+            </div>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        )}
+      
+        <div className="Home">
+          <div className="Hometext">
+            <h1>
+              Discover Your <br /> Dream job With <br />{" "}
+              <span className="logo1">JobHive</span>
+            </h1>
+            <p>
+              Discover top opportunities with JobHive,
+              <br /> Connect with leading employers and <br /> take the next
+              step in your career today.
+            </p>
+            <button className="apply1" onClick={() => toggleForm("login")}>
+              Apply
             </button>
-            <button className="navbt" onClick={() => toggleForm("signup")}>
-              Signup
+            <button className="hire1" onClick={() => toggleForm("login")}>
+              Hire a Talent
             </button>
           </div>
-          <div className="Home">
-            <div className="Hometext">
-              <h1>
-                Discover Your <br /> Dream job With <br />{" "}
-                <span className="logo1">JobHive</span>
-              </h1>
-              <p>
-                Discover top opportunities with JobHive,
-                <br /> Connect with leading employers and <br /> take the next
-                step in your career today.
-              </p>
-              <button className="apply1" onClick={() => toggleForm("login")}>
-                Apply
-              </button>
-              <button className="hire1" onClick={() => toggleForm("login")}>
-                Hire a Talent
-              </button>
-            </div>
-            <div className="pict">
-              <img className="pic" src={image} alt="JobHive" />
-            </div>
+          <div className="pict">
+            <img className="pic" src={image} alt="JobHive" />
           </div>
+        </div>
           <div className="steps">
             <div>
               <img className="stepicon" src={usericon1} alt="Register" />
@@ -476,6 +546,30 @@
           </div>
         </div>
         <div className="footerbottom"></div>
+
+
+        <div className="altnav">
+        <h1 className="logo">JobHive</h1>
+        <ul className="alt-links">
+            <li className="link">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="link">
+              <Link to="/anotherpage">Find Jobs</Link>
+            </li>
+            <li className="link">
+              <Link to="/About">About</Link>
+            </li>
+            <li className="link">
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+          <button>Logout</button>
+          <user>
+            <FaUser style={{height:'20px',color:'  rgb(191, 10, 12)'}}></FaUser>
+            <username></username>
+          </user>
+        </div>
       </>
     );
   }

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { FaLinkedin, FaFacebook, FaGoogle } from "react-icons/fa";
+import { FaLinkedin, FaGoogle } from "react-icons/fa";
 import "./Login.css";
 import axios from 'axios';
 
-const Login = ({ toggleForm }) => {
+const Login = ({ toggleForm, onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("Candidate"); // State to track role
+  const [username, setUsername] = useState("");
+  const [role, setRole] = useState("Candidate");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -15,10 +16,10 @@ const Login = ({ toggleForm }) => {
       const response = await axios.get(url);
       const users = response.data;
 
-      const user = users.find(user => user.email === email && user.password === password);
+      const user = users.find(user => user.email === email && user.password === password && user.username === username);
       if (user) {
         alert("Login successful");
-        // Proceed to the next part of your app
+        onLoginSuccess({ username, role });
       } else {
         alert("Invalid credentials");
       }
@@ -55,17 +56,26 @@ const Login = ({ toggleForm }) => {
           </select>
         </div>
         <div className="line"></div>
-       
+      
         <button className="social-button lkd">
           <FaLinkedin className="icon" /> <span>Log in With LinkedIn</span>
         </button>
         <button className="social-button gl">
           <FaGoogle className="icon" /> <span>Log in With Google</span>
         </button>
-        <button className="social-button fb">
-          <FaFacebook className="icon" /> <span>Log in With Facebook</span>
-        </button>
+      
         <div className="line"></div>
+        <div className="inputbox1">
+          <label>Username</label>
+          <input
+            type="text"
+            placeholder="Your username"
+            required
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+        </div>
         <div className="inputbox1">
           <label>Email</label>
           <input
