@@ -76,7 +76,7 @@ const Nav = () => {
 
         {getNavClass() === 'desktopnav' && (
           <div className="desktopnav">
-            <h1 className="logo">JobHive</h1>
+            <h1 className="logo11">JobHive</h1>
             <ul className="nav-links">
               <li className="link">
                 <Link to="/">Home</Link>

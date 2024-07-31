@@ -202,7 +202,6 @@ const Land = () => {
     
         </div>
 
-        <Contact/>
        <div ></div>
       </>
     );

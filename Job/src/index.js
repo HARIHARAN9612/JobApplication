@@ -5,6 +5,7 @@ import App from './App';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Nav from './Fresh/Navbar';
 import Post from './JobBack/POST/Post';
+import Land from './Fresh/Landing';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
