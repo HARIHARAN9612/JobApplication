@@ -24,6 +24,12 @@
       "username": "Jobseeker",
       "email": "hariharand7373@gmail.com",
       "password": "12"
+    },
+    {
+      "id": "98b5",
+      "username": "Hariharan",
+      "email": "jj@gmail.com",
+      "password": "ss"
     }
   ],
   "jobs": [
